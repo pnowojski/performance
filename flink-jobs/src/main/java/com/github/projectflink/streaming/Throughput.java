@@ -101,9 +101,9 @@ public class Throughput {
 
 
 				if (idMode == ID_MODE.RANDOM) {
-					sourceContext.collect(new Type(ThreadLocalRandom.current().nextLong(), host, time, payload));
+					sourceContext.collectBatch(new Type(ThreadLocalRandom.current().nextLong(), host, time, payload));
 				} else {
-					sourceContext.collect(new Type(id, host, time, payload));
+					sourceContext.collectBatch(new Type(id, host, time, payload));
 				}
 
 				time = 0;
